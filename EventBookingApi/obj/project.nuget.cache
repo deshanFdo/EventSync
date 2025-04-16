@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "vWuPr4nXjbk=",
+  "success": true,
+  "projectFilePath": "D:\\PROJECT_REPOS\\EventSync\\EventBookingApi\\EventBookingApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Michelle\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.4\\microsoft.aspnetcore.openapi.9.0.4.nupkg.sha512",
+    "C:\\Users\\Michelle\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
