@@ -1,7 +1,7 @@
 ﻿{
   "$schema": "https://json.schemastore.org/launchsettings.json",
   "profiles": {
-    "http": {
+    "EventBookingApi": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": false,
@@ -14,7 +14,7 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": false,
-      "applicationUrl": "https://localhost:7031;http://localhost:5162",
+      "applicationUrl": "https://localhost:5162;http://localhost:5162",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

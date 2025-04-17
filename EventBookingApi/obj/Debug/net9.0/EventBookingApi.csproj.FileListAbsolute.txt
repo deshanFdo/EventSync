@@ -32,3 +32,9 @@ D:\PROJECT_REPOS\EventSync\EventBookingApi\obj\Debug\net9.0\refint\EventBookingA
 D:\PROJECT_REPOS\EventSync\EventBookingApi\obj\Debug\net9.0\EventBookingApi.pdb
 D:\PROJECT_REPOS\EventSync\EventBookingApi\obj\Debug\net9.0\EventBookingApi.genruntimeconfig.cache
 D:\PROJECT_REPOS\EventSync\EventBookingApi\obj\Debug\net9.0\ref\EventBookingApi.dll
+D:\PROJECT_REPOS\EventSync\EventBookingApi\bin\Debug\net9.0\DnsClient.dll
+D:\PROJECT_REPOS\EventSync\EventBookingApi\bin\Debug\net9.0\MongoDB.Bson.dll
+D:\PROJECT_REPOS\EventSync\EventBookingApi\bin\Debug\net9.0\MongoDB.Driver.dll
+D:\PROJECT_REPOS\EventSync\EventBookingApi\bin\Debug\net9.0\SharpCompress.dll
+D:\PROJECT_REPOS\EventSync\EventBookingApi\bin\Debug\net9.0\Snappier.dll
+D:\PROJECT_REPOS\EventSync\EventBookingApi\bin\Debug\net9.0\ZstdSharp.dll
