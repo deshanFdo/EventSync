@@ -1,50 +1,48 @@
 using EventBookingApi.Interfaces;
 using EventBookingApi.Models;
+using Microsoft.Extensions.Options;
+using MongoDB.Driver;
 
 namespace EventBookingApi.Services;
 
 public class EventRepository : IEventRepository
 {
-    private readonly List<Event> _events = new();
+    private readonly IMongoCollection<Event> _events;
 
-    public Task<List<Event>> GetAllAsync()
+    public EventRepository(IMongoClient mongoClient, IOptions<MongoDbSettings> options)
     {
-        return Task.FromResult(_events);
+        var settings = options.Value;
+        var database = mongoClient.GetDatabase(settings.DatabaseName);
+        _events = database.GetCollection<Event>("Events");
     }
 
-    public Task<Event?> GetByIdAsync(string id)
+    public async Task<List<Event>> GetAllAsync()
     {
-        var @event = _events.Find(e => e.Id == id);
-        return Task.FromResult(@event);
+        return await _events.Find(_ => true).ToListAsync();
     }
 
-    public Task CreateAsync(Event @event)
+    public async Task<Event?> GetByIdAsync(string id)
     {
-        _events.Add(@event);
-        return Task.CompletedTask;
+        return await _events.Find(e => e.Id == id).FirstOrDefaultAsync();
     }
 
-    public Task UpdateAsync(Event @event)
+    public async Task CreateAsync(Event @event)
     {
-        var existing = _events.Find(e => e.Id == @event.Id);
-        if (existing != null)
-        {
-            existing.Title = @event.Title;
-            existing.Description = @event.Description;
-            existing.Date = @event.Date;
-            existing.Location = @event.Location;
-            existing.VendorId = @event.VendorId;
-        }
-        return Task.CompletedTask;
+        await _events.InsertOneAsync(@event);
     }
 
-    public Task DeleteAsync(string id)
+    public async Task UpdateAsync(Event @event)
     {
-        var @event = _events.Find(e => e.Id == id);
-        if (@event != null)
-        {
-            _events.Remove(@event);
-        }
-        return Task.CompletedTask;
+        await _events.ReplaceOneAsync(e => e.Id == @event.Id, @event);
+    }
+
+    public async Task DeleteAsync(string id)
+    {
+        await _events.DeleteOneAsync(e => e.Id == id);
+    }
+
+    public async Task<List<Event>> GetByVendorIdAsync(string vendorId)
+    {
+        return await _events.Find(e => e.VendorId == vendorId).ToListAsync();
     }
 }

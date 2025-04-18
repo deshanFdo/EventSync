@@ -1,4 +1,3 @@
-
 using EventBookingApi.Interfaces;
 using EventBookingApi.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -34,6 +33,14 @@ public class EventController : ControllerBase
             return NotFound();
         }
         return Ok(@event);
+    }
+
+    // GET: api/event/vendor/1
+    [HttpGet("vendor/{vendorId}")]
+    public async Task<ActionResult<List<Event>>> GetByVendorId(string vendorId)
+    {
+        var events = await _eventRepository.GetByVendorIdAsync(vendorId);
+        return Ok(events);
     }
 
     // POST: api/event

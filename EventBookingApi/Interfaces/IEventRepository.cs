@@ -9,4 +9,5 @@ public interface IEventRepository
     Task CreateAsync(Event @event);
     Task UpdateAsync(Event @event);
     Task DeleteAsync(string id);
+    Task<List<Event>> GetByVendorIdAsync(string vendorId);
 }
