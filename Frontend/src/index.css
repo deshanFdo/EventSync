@@ -1,4 +1,62 @@
-@tailwind base;
+@tailwind base; 
 @tailwind components;
 @tailwind utilities;
+@tailwind screens;
+@tailwind typography;
+@tailwind forms;
+@tailwind aspect-ratio;
+@tailwind line-clamp;
+@tailwind animations;
+@tailwind transition; 
+@tailwind gradients;
+@tailwind shadows;
+@tailwind filters;
+@tailwind dark;
+@tailwind ring;
+@tailwind scrollbar;
+@tailwind accessibility;
+@tailwind typography;
+@tailwind forms;
+@tailwind aspect-ratio;
+@tailwind line-clamp;
+@tailwind animations;
+@tailwind transition;
+@tailwind gradients;
+@tailwind shadows;
+@tailwind filters;
+@tailwind dark;
+@tailwind ring;
+@tailwind scrollbar;
+@tailwind accessibility;            
+@tailwind components; 
+@tailwind utilities;
 
+ @layer components {
+   .glass-card {
+     @apply bg-white/10 backdrop-blur-lg border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg;
+   }
+
+   .event-card {
+     @apply bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+   }
+
+   .btn-primary {
+     @apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200;
+   }
+
+   .btn-secondary {
+     @apply bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200;
+   }
+
+   input:focus {
+     @apply ring-2 ring-blue-500 outline-none transition-shadow duration-200;
+   }
+
+   .dark-mode-toggle {
+     @apply relative inline-flex items-center h-6 rounded-full w-11 bg-gray-300 dark:bg-gray-600 transition-colors duration-200;
+   }
+
+   .dark-mode-toggle span {
+     @apply absolute left-0 inline-block w-4 h-4 transform bg-white rounded-full transition-transform duration-200 dark:translate-x-5;
+   }
+ }
